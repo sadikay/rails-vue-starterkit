@@ -6,13 +6,12 @@
 
 <script>
   export default {
-  props: ['message'],
-  /*  props: {
+    props: {
       message: {
         type: String,
         required: true
       }
-    }, */
+    },
 
     data: function () {
       return { }

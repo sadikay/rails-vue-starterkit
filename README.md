@@ -1,24 +1,52 @@
-# README
+# Rails - Vue - Turbolinks Starterkit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Quick Start
 
-Things you may want to cover:
+```
+git clone https://github.com/sadikay/rails-vue-starterkit.git
+```
 
-* Ruby version
+* Run `bundle install`
+* Run `yarn install`
+* Update database configrations in `config/database.yml`
+* `bundle exec rake db:create rake db:migrate`
 
-* System dependencies
+### Usage
+**javascript/components/user_info.vue**
+```vue
+<template>
+  <div>
+    <p>{{ userName }}</p>
+  </div>
+</template>
 
-* Configuration
+<script>
+  export default {
+    props: ['user'],
 
-* Database creation
+    data: function () {
+      return {
+        userName: this.user.name
+      }
+    }
+  }
+</script>
+```
 
-* Database initialization
+**javascript/packs/application.js**
+```
+...
+import DisplayUserInfo from '../components/user_info.vue'
+Vue.component('display-user-info', DisplayUserInfo);
+```
 
-* How to run the test suite
+**index.html.erb**
+```erb
+<display-user-info :user="<%= @user.to_json %>"></display-user-info>
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Versions
+* Ruby 2.5.1
+* Rails ~> 5.2.1
+* Vue ^2.5.17
+* vue-turbolinks ^2.0.3
