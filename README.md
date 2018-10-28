@@ -9,14 +9,15 @@ git clone https://github.com/sadikay/rails-vue-starterkit.git
 * Run `bundle install`
 * Run `yarn install`
 * Update database configrations in `config/database.yml`
-* `bundle exec rake db:create rake db:migrate`
+* `bundle exec rake db:create`
+* `rails s`
 
-### Usage
+### Example Usage
 **javascript/components/user_info.vue**
 ```vue
 <template>
   <div>
-    <p>{{ userName }}</p>
+    <p>{{ userName }} {{userLastName}}</p>
   </div>
 </template>
 
@@ -26,7 +27,8 @@ git clone https://github.com/sadikay/rails-vue-starterkit.git
 
     data: function () {
       return {
-        userName: this.user.name
+        userName: this.user.name,
+        userLastName: this.user.last_name
       }
     }
   }
@@ -41,6 +43,8 @@ Vue.component('display-user-info', DisplayUserInfo);
 ```
 
 **index.html.erb**
+
+We supppose to `@user` instance have accessible fields `name` and `last_name`.
 ```erb
 <display-user-info :user="<%= @user.to_json %>"></display-user-info>
 ```
