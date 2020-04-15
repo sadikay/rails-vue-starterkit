@@ -1,4 +1,6 @@
 # Rails - Vue - Turbolinks Starterkit
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsadikay%2Frails-vue-starterkit.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsadikay%2Frails-vue-starterkit?ref=badge_shield)
+
 
 ## Quick Start
 
@@ -54,3 +56,7 @@ We supppose to `@user` instance have accessible fields `name` and `last_name`.
 * Rails ~> 5.2.1
 * Vue ^2.5.17
 * vue-turbolinks ^2.0.3
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsadikay%2Frails-vue-starterkit.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsadikay%2Frails-vue-starterkit?ref=badge_large)
